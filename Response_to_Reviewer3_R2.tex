@@ -1,0 +1,280 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\setstretch{1.15}
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{elsarticle-num}
+
+\newcommand{\ms}{\text{m}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Response to Reviewer 3}\\[2pt]
+Manuscript ID: FINEL-D-26-00567\\[2pt]
+Revision 2\\[4pt]
+\textit{Finite Element Analysis of Second-Order Strain-Gradient Elasticity with\\ Ellipsoidal Nonlocal Characteristic Lengths}
+\end{center}
+
+\vspace{0.3cm}
+
+We thank Reviewer~3 for the second report. The two remaining points are well taken, and the first of them identifies a real weakness in how the earlier version of the manuscript was framed. Both are addressed below. New and changed text in the revised manuscript is marked in red; page numbers refer to the compiled Revision-2 manuscript.
+
+\vspace{0.2cm}
+
+\section*{Comment 1 --- physical origin of the anisotropic interactions}
+
+\begin{quote}\small\itshape
+The fundamental concern raised in my previous review has not been resolved. The ellipsoidal averaging domain generates anisotropic second moments mathematically, but this does not establish that a particular physical microstructure gives rise to such an interaction domain. References to aligned fibres, elongated grains, and lattice struts provide plausible cases of anisotropic response but do not provide any physics-based background on the origin of anisotropic interactions (which experiment would, respectively could prove that related interactions (i.e.\ interactions and not the resulting constitutive relations) are direction dependent?).
+\end{quote}
+
+\textbf{Response.} The reviewer is correct, and the distinction drawn in the comment is one we had blurred. The examples we gave --- aligned fibres, elongated or drawn grains, oriented lattice struts --- are evidence that such materials respond anisotropically. They are not evidence that the range over which material points interact is itself direction dependent, and nothing in our earlier text established the second claim from the first. We have therefore rewritten the relevant passage instead of defending it, and the ellipsoidal kernel is now described in Sec.~2.1 as what it actually is: a modelling ansatz.
+
+We would like to set out why we nevertheless consider the ansatz testable rather than merely convenient, since this is what allows the reviewer's question to be answered with a concrete experiment. A nonlocal interaction range is operationally a correlation length. It is the separation over which a local field measured at one material point remains correlated with the same field measured at another. A correlation length of this kind can be estimated from microstructural images alone, with no stiffness measurement and no constitutive model involved, and it can be resolved along and across a preferred material direction. If the correlation length obtained that way depends on direction, then the interaction range depends on direction. That is a statement about the microstructure and not about the resulting constitutive relation, which is precisely the separation the reviewer asks for.
+
+Measurements of this kind have been reported for fibre-reinforced polymers, and we have added three references to the manuscript. Schey et al.\ \cite{Schey2019} reconstruct fibre-reinforced polymer microstructures by micro-computed tomography and correlate microstructural descriptors as a function of separation distance in order to determine a length scale of the microstructure. Schey and Stapleton \cite{ScheyStapleton2022} extend that procedure to long reconstructed fibre paths in three dimensions, which allows the length scale to be resolved along and across the fibres rather than inferred from two-dimensional sections. Rauter and Lammering \cite{RauterLammering2020} examine the spatial correlation structure of the elasticity tensor of short fibre-reinforced composites and find correlation functions that differ between directions, consistent with an overall transversely isotropic material behaviour.
+
+We want to be explicit about the limits of this support, because overstating it would repeat the error the reviewer identified. Those studies measure the spatial correlation of microstructural or material-property fields. They do not measure a strain-averaging kernel. They do not establish the ellipsoidal shape of $\mathcal{V}$, and they do not establish the coefficient $1/10$ that follows from it. What they do establish is that direction-resolved correlation lengths are measurable properties of real heterogeneous media, so that a direction-dependent $L_{mn}$ is not purely an artefact of the averaging geometry we chose. The revised manuscript says this in those terms.
+
+Two passages have been added to Sec.~2.1. The first states the ansatz and its scope:
+
+\begin{quote}\small
+A caution is needed regarding the physical status of the
+ellipsoidal neighbourhood. The second-moment construction guarantees
+that an axis-aligned or rotated ellipsoid yields an anisotropic tensor
+$L_{mn}$, but that is a geometric statement about the averaging domain
+chosen here; it is not evidence that a given real microstructure
+possesses an anisotropic interaction domain. The features usually
+invoked in this connection --- aligned fibres, elongated or drawn
+grains, oriented lattice struts --- are well documented to produce
+anisotropic macroscopic response, and anisotropic response is a weaker
+statement than anisotropic interaction. The ellipsoidal kernel adopted
+in Eq.~(3) should therefore be read as a
+modelling ansatz: a parsimonious geometric parameterisation that admits
+direction-dependent interaction ranges and that collapses to the usual
+isotropic gradient model when $l_1=l_2=l_3$.
+\end{quote}
+
+\noindent The second defines the interaction range operationally, cites the three references above, and states what they do and do not show:
+
+\begin{quote}\small
+The ansatz is nevertheless testable, because an interaction
+range is an operationally well-defined quantity in its own right. In a
+weakly nonlocal description the neighbourhood over which the state at
+$\mathbf{x}$ is influenced by the state at $\mathbf{x}+\boldsymbol{\xi}$
+plays the role of a correlation length of a local field measured between
+material points, so it can be estimated from microstructural images
+without reference to any stiffness measurement, and it can be resolved
+along and across a preferred material direction. Micro-computed
+tomography reconstructions of fibre paths in fibre-reinforced polymers
+have been used in exactly this way: microstructural descriptors are
+correlated as a function of separation distance and the distance over
+which that correlation decays defines a length scale of the
+microstructure, the three-dimensional reconstruction allowing the
+analysis to be performed along and across the fibres rather than on
+two-dimensional sections alone \cite{Schey2019,ScheyStapleton2022}. In a
+related but distinct setting, the elasticity tensor of short
+fibre-reinforced composites has been shown to possess an anisotropic
+spatial correlation structure whose correlation functions differ between
+directions and reflect the overall transversely isotropic material
+behaviour \cite{RauterLammering2020}. These studies measure the spatial
+correlation of microstructural or material-property fields; they do not
+measure a strain-averaging kernel, and they do not establish the
+particular ellipsoidal form of $\mathcal{V}$ or the coefficient $1/10$
+used here. What they do show is that direction-resolved correlation
+lengths are measurable properties of real heterogeneous media, so that
+an anisotropic $L_{mn}$ is not purely a mathematical artefact of the
+averaging geometry. A direct experimental determination of the
+interaction-level anisotropy postulated in Eq.~(3),
+as opposed to an inference from macroscopic response, is not attempted in
+the present work and remains essential future work; the measurement
+route is outlined as step~7 of the calibration protocol in
+Sec.~7.1.
+\end{quote}
+
+The reviewer's question --- which experiment could show that the interactions rather than the constitutive response are direction dependent --- is answered by a measurement, not by an argument, so we have added it as a new step~7 of the calibration protocol in Sec.~7.1:
+
+\begin{quote}\small
+  \textbf{Interaction-level verification:} Steps 1--6 infer
+  $l_{x},l_{y},l_{z}$ from macroscopic response, so they cannot by
+  themselves distinguish an anisotropic interaction domain from an
+  anisotropic constitutive response. An independent check should
+  therefore be made at the microstructural level. The microstructure is
+  reconstructed by micro-computed tomography, a local field is extracted
+  from it (fibre path geometry, local orientation, or a local elasticity
+  estimate from resolved representative volume elements), and the
+  two-point correlation of that field is computed as a function of the
+  separation vector $\boldsymbol{\xi}$, resolved along and across the
+  principal material directions. The decay lengths of these
+  direction-resolved correlations provide estimates of $l_{1},l_{2},l_{3}$
+  that involve no stiffness measurement, and they can then be compared
+  with the values inferred in steps 1--6. Agreement between the two would
+  support the interaction-level interpretation of $L_{mn}$ adopted in
+  Sec.~2.1, whereas disagreement would
+  indicate that the ellipsoidal kernel does not adequately represent the
+  true interaction domain. This comparison has not been carried out here,
+  and a direct interaction-level calibration of $L_{mn}$ remains essential
+  future work.
+\end{quote}
+
+\noindent and, so that the status of the assumption is not left implicit anywhere in the paper, as a new entry in the limitations list in Sec.~7.2:
+
+\begin{quote}\small
+  The anisotropy of the interaction domain is a modelling
+  assumption rather than an established experimental fact. Aligned fibres,
+  elongated grains and oriented lattice struts evidence anisotropic
+  response, not anisotropic interaction, and neither the present work nor
+  the literature cited here measures the strain-averaging kernel directly.
+  The ellipsoidal form of $\mathcal{V}$ and the coefficient $1/10$ are
+  therefore not experimentally validated; step~7 of
+  Sec.~7.1 outlines how they could be tested.
+\end{quote}
+
+We have not performed the comparison described in step~7 and we do not claim that the ellipsoidal kernel has been experimentally validated. Steps~1 to 6 of the protocol infer $l_x,l_y,l_z$ from macroscopic response and therefore cannot by themselves separate an anisotropic interaction domain from an anisotropic constitutive response; only step~7 can, and it remains future work. We are grateful for the insistence on this point, because the earlier version of the manuscript did read as though the geometric construction carried physical evidence that it does not carry.
+
+\section*{Comment 2 --- scope of the examples, validity range, Table~B.3 and 3D discretisation}
+
+\begin{quote}\small\itshape
+The new orientation study and Directional Stiffening Index illustrate the mathematical consequences of the assumed tensorial length scale, but the examples remain limited to idealised bars, rectangles, and cuboids. Some of the strongest effects are obtained for characteristic lengths comparable to the structural dimension, including $l_x/L_x = 1$, although the Taylor expansion requires $l_{\max} \ll L_\varepsilon$. Moreover Table B.3 seems not to be appropriately embedded in the (text of the) paper and the appendix. Independent of the results summarized in Table B.3, are the discretizations chosen sufficiently fine in order to appropriate capture boundary effects (in 3D)?
+\end{quote}
+
+\textbf{Response.} We deal with the four matters raised here in turn.
+
+\subsection*{(a) Table B.3 was not embedded in the text}
+
+The reviewer is right. Table~B.3 carried a label but was never cited anywhere in the manuscript, so it appeared in the appendix with no textual anchor. It is now referred to from three places, and the appendix introduces it explicitly.
+
+At the end of Sec.~5.4, where the three-dimensional element and its consistent mass matrix are defined:
+
+\begin{quote}\small
+The mesh density adopted for the three-dimensional computations,
+together with its sensitivity, is quantified in
+Table~B.3 (Appendix~B).
+\end{quote}
+
+\noindent In the mesh-sensitivity paragraph of Sec.~5.5, immediately before the sentence that quotes the solver output:
+
+\begin{quote}\small
+Full results for all three meshes are reported in
+Table~B.3 (Appendix~B). 
+\end{quote}
+
+\noindent At the start of Appendix~B:
+
+\begin{quote}\small
+Table~B.3 at the end of this appendix collects the
+three-dimensional mesh-sensitivity results referred to in
+Sec.~5.4,
+Sec.~5.5; for each of the three grids it
+reports the mesh density, the number of degrees of freedom, the element
+size $h_{x}$, the boundary-layer resolution ratio $h_{x}/a$, the mean
+right-face displacement and the fundamental frequency. 
+\end{quote}
+
+\subsection*{(b) Are the 3D discretisations fine enough to capture boundary effects?}
+
+Not to the standard the question implies, and we have said so in the revised manuscript rather than leaving the reader to infer it from the table.
+
+For $l=0.05$\,m and $L_x=1$\,m the boundary-layer thickness is $a=\sqrt{l^2/10}=0.0158$\,m. The three meshes in Table~B.3 therefore correspond to the following resolution ratios, which we have added to the table as two new columns:
+
+\begin{center}\small
+\begin{tabular}{lcccc}
+\hline
+Mesh & $h_x$ (m) & $h_x/a$ & DOF & $h_x\ll a$ reached? \\
+\hline
+$2\times1\times1$ & 0.500 & 31.6 & 288  & no \\
+$4\times2\times2$ & 0.250 & 15.8 & 1080 & no \\
+$6\times3\times3$ & 0.167 & 10.5 & 2688 & no \\
+\hline
+\end{tabular}
+\end{center}
+
+None of the three reaches $h_x\ll a$; on the evidence of the existing results this would require more than twenty elements along $x$. The table is unchanged in every other respect:
+
+\begin{center}\small
+\begin{tabular}{cccccc}
+\hline
+Mesh & DOF (=nodes$\times$24) & $h_x$ (m) & $h_x/a$ & $u_{avg}$ ($\mu$m) & $f_1$ (Hz) \\
+\hline
+$2\times1\times1$ (12 nodes) & 288 & 0.500 & 31.6 & 4.5665 & 193.00 \\
+$4\times2\times2$ (45 nodes) & 1080 & 0.250 & 15.8 & 4.7876 & 178.72 \\
+$6\times3\times3$ (112 nodes) & 2688 & 0.167 & 10.5 & 4.8371 & 174.96 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent together with the following addition to its caption:
+
+\begin{quote}\small
+The added columns give the element size $h_x=L_x/n_{ex}$ and the boundary-layer resolution ratio $h_x/a$ with $a=0.0158$~m; none of the three meshes reaches $h_x\ll a$.
+\end{quote}
+
+The honest reading of the existing data is that the mesh-sensitivity study bounds the discretisation error but does not eliminate it. Displacement increases monotonically from $u=4.5665$\,$\mu$m to $u=4.8371$\,$\mu$m and the fundamental frequency decreases monotonically from $f_1=193.00$\,Hz to $f_1=174.96$\,Hz between the coarsest and finest meshes, a total change of $5.9\%$ and $9.3\%$ respectively. The $4\times2\times2$ mesh used throughout Sec.~6 sits close to the fine end of that range, differing from the $6\times3\times3$ mesh by about $1.0\%$ in displacement and $2.1\%$ in frequency; since the trend has not saturated, those two figures are lower bounds on the error remaining at that density rather than estimates of it. This is now stated in Sec.~5.5:
+
+\begin{quote}\small
+Expressed as a resolution ratio, the three meshes give
+$h_{x}/a=31.6$, $15.8$ and $10.5$ for $2\times1\times1$, $4\times2\times2$
+and $6\times3\times3$ respectively, so none of them reaches the
+$h_{x}\ll a$ regime. The monotonic trend and the $5.9\%$ and $9.3\%$
+spreads therefore bound the discretisation error associated with the
+boundary layer, but they do not eliminate it. The $4\times2\times2$ mesh
+used throughout Sec.~6 differs from the finest
+mesh tested by about $1.0\%$ in displacement and $2.1\%$ in frequency,
+and because the trend has not saturated these figures are lower bounds on
+the error remaining at that density. The element choice partially offsets
+the coarse resolution: since the tricubic Hermite element carries slope
+and curvature degrees of freedom, it can represent the exponential decay
+$\theta(x)\propto1-e^{-x/a}$ within a single element, whereas a $C^{0}$
+element of the same size can reproduce that profile only piecewise
+linearly. That is a relative advantage at a given $h_{x}/a$, not a
+substitute for resolving the layer, and the boundary layer is not claimed
+to be fully resolved at any of the three densities.
+\end{quote}
+
+\noindent Sec.~6.4 previously asserted, without qualification, that the $4\times2\times2$ grid is ``fine enough to capture the physics''. That sentence has been left as it stands but is now immediately qualified:
+
+\begin{quote}\small
+This applies to the global static and dynamic response and
+should not be read as a claim that the near-boundary strain-gradient
+layer is fully resolved: for $l=0.05$\,m the layer thickness is
+$a=\sqrt{l^{2}/10}=0.0158$\,m, so the $4\times2\times2$ grid corresponds
+to $h_{x}/a\approx15.8$. The mesh-sensitivity study summarised in
+Table~B.3 and discussed in
+Sec.~5.5 quantifies the resulting
+discretisation error.
+\end{quote}
+
+We do not claim that the boundary layer is fully resolved at any of the three mesh densities, and the revised text no longer implies it.
+
+\subsection*{(c) Cases with $l_x/L_x = 1$}
+
+No result has been changed. The strongest effects in the design-space map of Sec.~6.6 do occur at $l_x/L_x=1$, and the manuscript already carries the necessary caveat in Sec.~7.2, where cases with $l/L>0.10$ are described as a parametric sensitivity study rather than a realisation of the weakly nonlocal regime. What was missing was a pointer at the place where those cases actually appear. One sentence has been added in Sec.~6.6, immediately after the discussion of the $(\mathrm{AR}=20,\theta=0^\circ)$ corner:
+
+\begin{quote}\small
+This corner corresponds to $l_{x}/L_{x}=1$, well outside the
+weakly nonlocal regime in which the second-order Taylor expansion of
+Sec.~2.1 is derived; as noted in
+Sec.~7, cases with $l/L>0.10$ are parametric
+sensitivity studies that map the trend of the model rather than
+physically admissible configurations, and the integral form of the
+averaging operator, not its gradient approximation, should be used
+there.
+\end{quote}
+
+\subsection*{(d) Examples limited to idealised bars, rectangles and cuboids}
+
+We agree, and we have not attempted to conceal it. The restriction is a consequence of the discretisation rather than of the theory: the tensor-product Hermite elements used here are defined on rectangular and cuboidal grids, and extending them to curved or irregular boundaries requires isoparametric $C^1$ Hermite elements, isogeometric analysis or a virtual element formulation. This is already recorded in the manuscript in Sec.~5.5, where the isoparametric extension is set out and curved boundaries are left as future work, and again as an entry in the limitations list in Sec.~7.2. Since the reviewer's concern here is one of scope rather than of a specific claim, and since both statements were already present in the revised version, we have not modified them. Adding a genuinely non-rectangular three-dimensional example would require a different element technology and is beyond what can be delivered in this revision; we would rather state that plainly than extend the examples in a way that does not answer the objection.
+
+
+\vspace{0.4cm}
+
+No numerical result, figure, table entry or equation elsewhere in the manuscript has been altered, and no new computation has been performed for this revision. Every quantity quoted above is either taken directly from the Revision-1 manuscript or obtained from those values by arithmetic: $h_x=L_x/n_{ex}$, $a=\sqrt{l^2/10}=0.0158$\,m, $h_x/a$, and the differences between the $4\times2\times2$ and $6\times3\times3$ rows of Table~B.3.
+
+\bibliography{references_R2}
+
+\end{document}
